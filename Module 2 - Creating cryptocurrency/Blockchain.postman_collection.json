@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "30e5fa18-a74e-4b1a-9f37-03bb529add75",
+		"name": "Blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get the current blockchain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{node2}}/blockchain",
+					"host": [
+						"{{node2}}"
+					],
+					"path": [
+						"blockchain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mine block and add to blockchain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/mine-block",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mine-block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check blockchain valid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/check-valid-blockchain",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"check-valid-blockchain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connect nodes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\n        \"http://127.0.0.1:5001\", \n        \"http://127.0.0.1:5002\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{node3}}/connect_node",
+					"host": [
+						"{{node3}}"
+					],
+					"path": [
+						"connect_node"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace blockchain",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{node1}}/replace_chain",
+					"host": [
+						"{{node1}}"
+					],
+					"path": [
+						"replace_chain"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
